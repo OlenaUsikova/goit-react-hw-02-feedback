@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 export const Statistic = ( {good, neutral, bad, total, positivePercentage} ) => {
-    // const { good, neutral, bad, total, positivePercentage }= data;
     return(
         <>
         <p>Good: {good}</p>
@@ -12,11 +11,9 @@ export const Statistic = ( {good, neutral, bad, total, positivePercentage} ) => 
     )}
   
     Statistic.propTypes = {
-        data: PropTypes.shape({
             good: PropTypes.number,
             neutral: PropTypes.number,
             bad: PropTypes.number,
             total: PropTypes.number,
             positivePercentage: PropTypes.number,
-          })
-         };
+          }
