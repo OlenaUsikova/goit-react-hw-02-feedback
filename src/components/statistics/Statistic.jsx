@@ -1,7 +1,6 @@
-import data from '../App'
 import PropTypes from 'prop-types';
-export const Statistic = ( data ) => {
-    const { good, neutral, bad, total, positivePercentage }= data;
+export const Statistic = ( {good, neutral, bad, total, positivePercentage} ) => {
+    // const { good, neutral, bad, total, positivePercentage }= data;
     return(
         <>
         <p>Good: {good}</p>

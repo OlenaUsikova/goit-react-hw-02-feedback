@@ -11,18 +11,21 @@ export class App extends React.Component {
     neutral: 0,
     bad: 0
   }
-  handleClick = ({target.name}) => {
-     this.setState(prevState[name] => ({
-      name: prevState[name] + 1}))
 
-  countTotalFeedback = () => {
-    return (this.state.good + this.state.neutral + this.state.bad)};
+  onLeaveFeedback = (e) => {
+      const {name} = e.target;
+     this.setState(prevState => ({
+      [name]: prevState[name] + 1}))
+     }
 
-  countPositiveFeedbackPercentage = () => {
-    return (({this.state.good} / countTotalFeedback()) * 100)
+  countTotalFeedback = () => (this.state.good + this.state.neutral + this.state.bad);
+  
+  countPositiveFeedbackPercentage = (total) => {
+    return ((this.state.good / total) * 100).toFixed()
   }
-
   render() {
+    const total = this.countTotalFeedback()
+    const positivePercentage = this.countPositiveFeedbackPercentage(total)
       return (
     <div
       style={{
@@ -36,14 +39,15 @@ export class App extends React.Component {
       }}
     >
       <Section title="Please, leave a feedback">
-        <FeedbackOptions/>
+        <FeedbackOptions onLeaveFeedback={this.onLeaveFeedback} options={Object.keys(this.state)}/>
         </Section>
         <Section title="Statistics:">
-        {countTotalFeedback!==0 ? <Statistic/> : <p>"There is no feedback"</p>}
+        {this.countTotalFeedback() ? <Statistic {...this.state} total= {total}
+         positivePercentage={positivePercentage}/> : <p>"There is no feedback"</p>}
         </Section>
     </div>
   )
-}}}
+}}
 
 
 // static propTypes = {
