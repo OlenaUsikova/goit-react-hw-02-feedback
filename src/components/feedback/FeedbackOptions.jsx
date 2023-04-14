@@ -16,4 +16,6 @@ export const FeedbackOptions = ({options, onLeaveFeedback}) => {
 }
 
 FeedbackOptions.propTypes = {
-    options: PropTypes.arrayOf}
+    options: PropTypes.arrayOf(
+        PropTypes.string 
+    )}

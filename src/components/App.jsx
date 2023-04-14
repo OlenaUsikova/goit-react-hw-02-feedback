@@ -12,11 +12,6 @@ export class App extends React.Component {
     bad: 0,
   };
 
-  static propTypes = {
-    good: PropTypes.number,
-    neutral: PropTypes.number,
-    bad: PropTypes.number,
-  };
   onLeaveFeedback = e => {
     const { name } = e.target;
     this.setState(prevState => ({
