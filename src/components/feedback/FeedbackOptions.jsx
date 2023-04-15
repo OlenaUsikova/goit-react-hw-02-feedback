@@ -2,8 +2,7 @@ import {StyledButton} from './FeedbackOptions.styled'
 import PropTypes from 'prop-types'
 
 export const FeedbackOptions = ({options, onLeaveFeedback}) => {
-   console.log(onLeaveFeedback)
-    return(
+      return(
         <div
         style={{ margin: "0 auto",
                  display: 'flex',
@@ -17,5 +16,6 @@ export const FeedbackOptions = ({options, onLeaveFeedback}) => {
 
 FeedbackOptions.propTypes = {
     options: PropTypes.arrayOf(
-        PropTypes.string 
-    )}
+        PropTypes.string),
+    onLeaveFeedback: PropTypes.func    
+    }
